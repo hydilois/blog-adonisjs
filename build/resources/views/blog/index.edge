@@ -1,0 +1,21 @@
+@@layout('layout')
+
+@section('body')
+  <h2>Articles</h2>
+  <section>
+    <p>
+      <a class="btn btn-primary" href="#">Créer un article</a>
+    </p>
+  </section>
+  <main>
+    <ul class="list-group mb-3">
+      @each(post in posts)
+      <li class="list-group-item">
+        <div class="d-flex justify-content-between align-items-center">
+          <a href="{{ route('post.show', { id: post.id }) }}">{{ post.title }}</a>
+        </div>
+      </li>
+      @end
+    </ul>
+  </main>
+@endsection
